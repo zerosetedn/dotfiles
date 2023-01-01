@@ -1,0 +1,69 @@
+ font pango:NotoSans Mono 10
+ client.background #1793D1
+ client.focused #1793D1 #1793D1 #FFFFFF #1793D1 #1793D1
+ client.focused_inactive #333333 #333333 #888888 #333333 #333333
+ client.focused_tab_title #333333 #333333 #888888 #333333 #333333
+ client.unfocused #333333 #333333 #888888 #333333 #333333
+ client.urgent #FF0D00 #FF0D00 #FFFFFF #FF0D00 #FF0D00
+ client.placeholder #000000 #000000 #FFFFFF #000000 #000000
+ workspace_layout tabbed
+ xwayland enable
+ set $modify MOD4
+ set $left left
+ set $down down
+ set $up up
+ set $right right
+ set $terminal foot
+ set $launcher fuzzel
+ bindsym $modify+Return exec $terminal
+ bindsym $modify+BackSpace exec $launcher
+ bindsym $modify+Shift+W floating toggle
+ bindsym $modify+Shift+F fullscreen toggle
+ bindsym $modify+Tab focus prev
+ bindsym $modify+$left focus left
+ bindsym $modify+$down focus down
+ bindsym $modify+$up focus up
+ bindsym $modify+right focus right
+ bindsym $modify+Shift+K kill
+ bindsym $modify+Shift+E exit
+ bindsym $modify+Shift+R reload
+ bindsym $modify+Shift+End exec systemctl poweroff
+ bindsym $modify+Shift+Home exec systemctl reboot
+ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+ bindsym XF86AudioPlay exec playerctl play-pause
+ bindsym XF86AudioStop exec pactl set-sink-volume @DEFAULT_SINK@ 100%
+ bindsym $modify+Print exec grim $(xdg-user-dir PICTURES)/$(date +'Captura_De_Tela_%d-%m-%y_%H-%M.png')
+ bindsym $modify+Shift+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'Captura_De_Tela_%d-%m-%y_%H-%M.png')
+ exec_always    {
+        mako
+                }
+ output *       {
+        resolution 1920x1080@75Hz
+                }
+
+ input  *       {
+        xkb_layout "br"
+                }
+
+ bar            {
+        position bottom
+        status_command while date +"%H:%M %d/%m/%y"; do sleep 1; done
+        tray    {
+        tray_bindcode 273 ContextMenu
+        tray_bindsym BTN_RIGHT ContextMenu
+                }
+        colors  {
+        background #333333E6
+        statusline #FFFFFFE6
+        focused_background #333333E6
+        focused_statusline #FFFFFFE6
+        focused_separator #1793D180
+        focused_workspace #1793D180 #1793D1FF #FFFFFFFF
+        active_workspace #1793D180 #1793D1FF #FFFFFFFF
+        inactive_workspace #33333380 #333333FF #888888FF
+        urgent_workspace #FF0D0080 #FF0D00FF #FFFFFFFF
+        binding_mode #1793D180 #1793D1FF #FFFFFFFF
+                }
+                }
