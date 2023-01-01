@@ -1,0 +1,37 @@
+max-history=5
+sort=-time
+
+on-button-left=invoke-default-action
+on-button-middle=none
+on-button-right=dismiss
+on-touch=dismiss
+on-notify=none
+
+font=NotoSans Mono 10
+background-color=#333333FF
+text-color=#1793D1FF
+width=500
+height=100
+outer-margin=0
+margin=10
+padding=5
+border-size=5
+border-color=#1793D1FF
+border-radius=0
+progress-color=over #1793D1FF
+icons=0
+max-icon-size=30
+icon-path=""
+icon-location=left
+markup=1
+actions=1
+history=1
+format=<b>%s</b>\n%b
+text-alignment=left
+default-timeout=0
+ignore-timeout=0
+group-by=none
+max-visible=5
+output=*
+layer=top
+anchor=bottom-right
