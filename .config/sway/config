@@ -38,6 +38,7 @@
  bindsym $modify+Shift+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'Captura_De_Tela_%d-%m-%y_%H-%M.png')
  exec_always    {
         mako
+	dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
                 }
  output *       {
         resolution 1920x1080@75Hz
