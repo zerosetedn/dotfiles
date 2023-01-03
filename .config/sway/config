@@ -29,11 +29,14 @@
  bindsym $modify+Shift+R reload
  bindsym $modify+Shift+End exec systemctl poweroff
  bindsym $modify+Shift+Home exec systemctl reboot
+ bindsym XF86Explorer exec firefox --private-window "file:///home/daniel"
+ #bindsym XF86Mail
+ #bindsym XF86AudioPlay
+ bindsym XF86AudioStop exec pactl set-sink-volume @DEFAULT_SINK@ 100% 
  bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
  bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
  bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
- bindsym XF86AudioPlay exec playerctl play-pause
- bindsym XF86AudioStop exec pactl set-sink-volume @DEFAULT_SINK@ 100%
+ bindsym XF86HomePage exec firefox --private-window
  bindsym $modify+Print exec grim $(xdg-user-dir PICTURES)/$(date +'Captura_De_Tela_%d-%m-%y_%H-%M.png')
  bindsym $modify+Shift+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'Captura_De_Tela_%d-%m-%y_%H-%M.png')
  exec_always    {
